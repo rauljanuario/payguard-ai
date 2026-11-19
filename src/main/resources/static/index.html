@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayGuard MCP</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="container">
+    <header class="header">
+        <div>
+            <p class="eyebrow">API Audit Console</p>
+            <h1>PayGuard MCP</h1>
+        </div>
+        <span id="statusBadge" class="status-badge">Pronto</span>
+    </header>
+
+    <section class="panel">
+        <h2>Nova auditoria</h2>
+        <form id="auditForm">
+            <label>
+                Nome do módulo
+                <input id="moduleName" name="moduleName" required
+                       placeholder="payments">
+            </label>
+
+            <div class="editor-grid">
+                <label>
+                    Código-fonte
+                    <textarea id="sourceCode" name="sourceCode" required
+                              placeholder="@PostMapping(&quot;/payments&quot;)"></textarea>
+                </label>
+
+                <label>
+                    Documentação atual
+                    <textarea id="currentDocumentation" name="currentDocumentation"
+                              required
+                              placeholder="# Payments API&#10;POST /payments"></textarea>
+                </label>
+            </div>
+
+            <button id="auditButton" type="submit">Executar auditoria</button>
+        </form>
+    </section>
+
+    <section id="resultPanel" class="panel result-panel" hidden>
+        <div class="result-header">
+            <h2>Resultado da auditoria</h2>
+            <span id="severityBadge" class="severity-badge"></span>
+        </div>
+        <p id="breakingChangeResult"></p>
+        <h3>Divergências</h3>
+        <ul id="discrepancies"></ul>
+        <h3>Documentação sugerida</h3>
+        <pre id="suggestedDocumentation"><code></code></pre>
+        <button id="copyResultButton" class="secondary copy-button" type="button">
+            Copiar Markdown
+        </button>
+        <div class="review-actions">
+            <button id="approveButton" class="approve" type="button">
+                Aprovar
+            </button>
+            <button id="rejectButton" class="reject" type="button">
+                Descartar
+            </button>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="result-header">
+            <h2>Histórico</h2>
+            <button id="refreshButton" class="secondary" type="button">
+                Atualizar
+            </button>
+        </div>
+        <div id="history" class="history"></div>
+    </section>
+</main>
+
+<script src="./app.js"></script>
+</body>
+</html>
