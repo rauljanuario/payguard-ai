@@ -12,9 +12,9 @@
     </parent>
 
     <groupId>com.payguard</groupId>
-    <artifactId>payguard-mcp</artifactId>
+    <artifactId>payguard-ai</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>PayGuard MCP</name>
+    <name>PayGuard AI</name>
     <description>API auditor for detecting breaking changes in API and webhook documentation</description>
 
     <properties>

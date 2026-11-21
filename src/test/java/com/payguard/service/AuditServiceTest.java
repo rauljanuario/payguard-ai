@@ -6,7 +6,7 @@ import com.payguard.dto.CreateAuditRequest;
 import com.payguard.dto.GeminiAnalysisResponse;
 import com.payguard.dto.ReviewAuditRequest;
 import com.payguard.exception.AuditNotFoundException;
-import com.payguard.mcp.SensitiveDataMasker;
+import com.payguard.security.SensitiveDataMasker;
 import com.payguard.model.AuditReport;
 import com.payguard.model.AuditSeverity;
 import com.payguard.model.ReviewStatus;

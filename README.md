@@ -1,4 +1,4 @@
-# PayGuard MCP
+# PayGuard AI
 
 Auditor de APIs e webhooks que compara código-fonte com a documentação atual, identifica possíveis breaking changes e gera uma versão corrigida da documentação em Markdown.
 
@@ -86,7 +86,7 @@ Ou gere e execute o JAR:
 
 ```bash
 mvn clean package
-java -jar target/payguard-mcp-0.0.1-SNAPSHOT.jar
+java -jar target/payguard-ai-0.0.1-SNAPSHOT.jar
 ```
 
 Com a aplicação em execução:
@@ -105,7 +105,7 @@ O arquivo [`app.js`](src/main/resources/static/app.js) usa `http://127.0.0.1:808
 
 1. O cliente envia o nome do módulo, o código-fonte e a documentação atual.
 2. A aplicação valida os campos obrigatórios.
-3. [`SensitiveDataMasker`](src/main/java/com/payguard/mcp/SensitiveDataMasker.java) mascara dados sensíveis.
+3. [`SensitiveDataMasker`](src/main/java/com/payguard/security/SensitiveDataMasker.java) mascara dados sensíveis.
 4. [`GeminiClient`](src/main/java/com/payguard/client/GeminiClient.java) envia o conteúdo mascarado ao Gemini e solicita uma resposta JSON.
 5. A resposta é convertida em um relatório com breaking change, severidade, divergências e documentação sugerida.
 6. O relatório é salvo em `audit_reports` e suas divergências em `audit_discrepancies`.
@@ -273,7 +273,7 @@ Os testes atuais cobrem o serviço de auditoria, incluindo mascaramento antes da
 │   │   │   ├── controller/       # Endpoints REST
 │   │   │   ├── dto/              # Contratos de entrada e saída
 │   │   │   ├── exception/        # Exceções e respostas de erro
-│   │   │   ├── mcp/              # Mascaramento de dados
+│   │   │   ├── security/         # Mascaramento de dados
 │   │   │   ├── model/            # Entidades e enums
 │   │   │   ├── repository/       # Repositórios JPA
 │   │   │   └── service/           # Regras de negócio

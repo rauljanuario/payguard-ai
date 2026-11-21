@@ -1,4 +1,4 @@
-package com.payguard.mcp;
+package com.payguard.security;
 
 import org.springframework.stereotype.Component;
 
