@@ -3,3 +3,4 @@ data/*.mv.db
 data/*.trace.db
 data/
 .vscode/
+target/
